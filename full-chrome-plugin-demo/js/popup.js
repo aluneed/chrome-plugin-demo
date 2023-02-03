@@ -193,6 +193,10 @@ $('#update_font_size').click(() => {
 	sendMessageToContentScript({cmd:'update_font_size', size: 42}, function(response){});
 });
 
+$('#delete_zhihu_header').click(() => {
+	executeScriptToCurrentTab('document.getElementById("root").getElementsByTagName("div")[2].remove();')
+});
+
 // 显示badge
 $('#show_badge').click(() => {
 	chrome.browserAction.setBadgeText({text: 'New'});
